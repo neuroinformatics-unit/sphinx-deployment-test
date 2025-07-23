@@ -17,8 +17,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Your Project Name'
-copyright = '2022, Neuroinformatics Unit'
+project = 'Sphinx-deployment-test'
+copyright = '2025, Neuroinformatics Unit'
 author = 'Neuroinformatics Unit'
 
 # The full version, including alpha/beta/rc tags
@@ -81,12 +81,12 @@ exclude_patterns = [
 # a list of builtin themes.
 #
 html_theme = 'pydata_sphinx_theme'
-html_title = 'Your Project Name'
+html_title = 'Sphinx-deployment-test'
 
 # Redirect the webpage to another URL
 # Sphinx will create the appropriate CNAME file in the build directory
 # https://www.sphinx-doc.org/en/master/usage/extensions/githubpages.html
-html_baseurl = 'TODO: add your URL here'
+# html_baseurl = 'TODO: add your URL here'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -106,7 +106,7 @@ html_theme_options = {
             # Label for this link
             "name": "GitHub",
             # URL where the link will redirect
-            "url": "TO DO",  # required
+            "url": "https://github.com/niksirbi/sphinx-deployment-test",
             # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
             "icon": "fa-brands fa-github",
             # The type of image to be used (see below for details)
@@ -114,7 +114,7 @@ html_theme_options = {
         }
    ],
    "logo": {
-        "text": "Your Project Name",
+        "text": f"Sphinx-deployment-test v{release}",
         "image_light": "logo_light.png",
         "image_dark": "logo_dark.png",
     },
