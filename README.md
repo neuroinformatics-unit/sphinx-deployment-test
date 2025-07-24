@@ -8,7 +8,7 @@ We deploy most of our websites by combining two of [our re-usable GitHub Actions
 - [deploy_sphinx_docs](https://github.com/neuroinformatics-unit/actions/tree/main/deploy_sphinx_docs)
 
 Changes to these actions can potentially affect the deployment of our Sphinx websites. 
-This repository provides a safe environment to test the changes before applying them  in production.
+This repository provides a safe environment to test the changes before applying them in production.
 
 ## Usage
 
