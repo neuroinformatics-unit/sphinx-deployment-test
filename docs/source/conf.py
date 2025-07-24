@@ -30,8 +30,6 @@ try:
         check=True
     )
     release = result.stdout.strip().lstrip('v')
-    print(release)
-    print(result)
 except (subprocess.CalledProcessError, FileNotFoundError):
     release = "0.0.0"
 

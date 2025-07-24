@@ -49,4 +49,3 @@ jobs:
         with:
           secret_input: ${{ secrets.GITHUB_TOKEN }}
           use-make: true
-          # use-artifactci: true
