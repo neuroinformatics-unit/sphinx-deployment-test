@@ -3,17 +3,17 @@
 This repository is used to test the build and deployment of 
 NIU's Sphinx websites.
 
-We deploy most of our website by combining two of [our re-usable GitHub Actions](https://github.com/neuroinformatics-unit/actions) in a workflow:
+We deploy most of our websites by combining two of [our re-usable GitHub Actions](https://github.com/neuroinformatics-unit/actions) in a workflow:
 - [build_sphinx_docs](https://github.com/neuroinformatics-unit/actions/tree/main/build_sphinx_docs)
 - [deploy_sphinx_docs](https://github.com/neuroinformatics-unit/actions/tree/main/deploy_sphinx_docs)
 
-Whenever we make a change to these actions, we ran the risk of breaking the deployment of our Sphinx websites.
-This repository allows us to test the changes before applying them to our main repositories.
+Changes to these actions can potentially affect the deployment of our Sphinx websites. 
+This repository provides a safe environment to test the changes before applying them  in production.
 
 ## Usage
 
 First create a Draft Pull Request (PR) to [our actions repository](https://github.com/neuroinformatics-unit/actions)
-with you desired changes. Let's assume the branch of your PR is `my-changes`.
+with your desired changes. Let's assume the branch of your PR is `my-changes`.
 
 Then, edit the [workflow file](.github/workflows/docs_build_and_deploy.yml) in this repository.
 Replace the respective action links with:
@@ -30,4 +30,4 @@ Finally, push the changes to this repository and wait for the build step to succ
 If you also want to test the deployment step, you may need to trigger it via manual workflow dispatch
 or via pushing a tag to the `main` branch (depending on the workflow configuration).
 
-You probably also want to examine the deployed test website at <http://neuroinformatics.dev/sphinx-deployment-test/>
+You may also examine the deployed test website at <http://neuroinformatics.dev/sphinx-deployment-test/>
