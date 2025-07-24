@@ -23,8 +23,7 @@ Replace the respective action links with:
 - uses: neuroinformatics-unit/actions/deploy_sphinx_docs@my-changes
 ```
 
-Make sure the rest of the workflow closely reflects the one used in the target repository,
-i.e. the one you intend to actually deploy with the updated actions.
+Make sure the rest of the workflow closely reflects the CI workflows used in production.
 
 Finally, push the changes to this repository and wait for the build step to successfully complete in CI.
 If you also want to test the deployment step, you may need to trigger it via manual workflow dispatch
