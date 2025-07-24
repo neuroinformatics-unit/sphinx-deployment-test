@@ -32,7 +32,7 @@ jobs:
           python-version: 3.12
           use-make: true
           fetch-tags: true
-          use-artifactci: eager
+          use-artifactci: lazy
           check-links: false
 
   deploy_sphinx_docs:
@@ -49,4 +49,3 @@ jobs:
         with:
           secret_input: ${{ secrets.GITHUB_TOKEN }}
           use-make: true
-          use-artifactci: true
