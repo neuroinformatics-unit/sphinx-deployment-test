@@ -13,7 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+import subprocess
 
 # -- Project information -----------------------------------------------------
 
@@ -22,7 +22,18 @@ copyright = '2025, Neuroinformatics Unit'
 author = 'Neuroinformatics Unit'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+try:
+    result = subprocess.run(
+        ['git', 'describe', '--tags', '--abbrev=0'],
+        capture_output=True,
+        text=True,
+        check=True
+    )
+    release = result.stdout.strip().lstrip('v')
+    print(release)
+    print(result)
+except (subprocess.CalledProcessError, FileNotFoundError):
+    release = "0.0.0"
 
 
 # -- General configuration ---------------------------------------------------
