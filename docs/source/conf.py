@@ -117,7 +117,7 @@ html_theme_options = {
             # Label for this link
             "name": "GitHub",
             # URL where the link will redirect
-            "url": "https://github.com/niksirbi/sphinx-deployment-test",
+            "url": "https://github.com/neuroinformatics-unit/sphinx-deployment-test",
             # Icon class (if "type": "fontawesome"), or path to local image (if "type": "local")
             "icon": "fa-brands fa-github",
             # The type of image to be used (see below for details)
@@ -153,4 +153,4 @@ notfound_context = {
 }
 # Static files live in /<version>/_static/, but GH pages expects a single
 # 404.html at root, so use latest version for all static asset URLs in 404 page
-notfound_urls_prefix = "/latest/"
+notfound_urls_prefix = "/sphinx-deployment-test/latest/"
