@@ -153,4 +153,4 @@ notfound_context = {
 }
 # Static files live in /<version>/_static/, but GH pages expects a single
 # 404.html at root, so use latest version for all static asset URLs in 404 page
-notfound_urls_prefix = "/latest/"
+notfound_urls_prefix = "/sphinx-deployment-test/latest/"
