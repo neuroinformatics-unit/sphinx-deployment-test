@@ -133,7 +133,7 @@ html_theme_options = {
         "image_light": "logo_light.png",
         "image_dark": "logo_dark.png",
     },
-    "navbar_end": ["version-switcher", "navbar-icon-links"],
+    "navbar_end": ["version-switcher", "theme-switcher", "navbar-icon-links"],
     "footer_start": ["footer_start"],
     "footer_end": ["footer_end"],
 }
