@@ -17,22 +17,23 @@ import subprocess
 
 # -- Project information -----------------------------------------------------
 
-project = 'Sphinx-deployment-test'
-copyright = '2025, Neuroinformatics Unit'
-author = 'Neuroinformatics Unit'
+project = "Sphinx-deployment-test"
+copyright = "2025, Neuroinformatics Unit"
+author = "Neuroinformatics Unit"
 
 # The full version, including alpha/beta/rc tags
 try:
     result = subprocess.run(
-        ['git', 'describe', '--tags', '--abbrev=0'],
+        ["git", "describe", "--tags", "--abbrev=0"],
         capture_output=True,
         text=True,
-        check=True
+        check=True,
     )
-    release = result.stdout.strip().lstrip('v')
+    release = result.stdout.strip().lstrip("v")
 except (subprocess.CalledProcessError, FileNotFoundError):
     release = "0.0.0"
 
+doc_version = "dev" if "dev" in release else f"v{release}"
 
 # -- General configuration ---------------------------------------------------
 
@@ -40,15 +41,16 @@ except (subprocess.CalledProcessError, FileNotFoundError):
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.githubpages',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.napoleon',
-    'myst_parser',
-    'numpydoc',
-    'nbsphinx',
+    "sphinx.ext.githubpages",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
+    "sphinx.ext.viewcode",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.napoleon",
+    "myst_parser",
+    "numpydoc",
+    "nbsphinx",
+    "notfound.extension",
 ]
 
 # Configure the myst parser to enable cool markdown features
@@ -71,7 +73,7 @@ myst_enable_extensions = [
 myst_heading_anchors = 3
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -89,8 +91,8 @@ exclude_patterns = [
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'pydata_sphinx_theme'
-html_title = 'Sphinx-deployment-test'
+html_theme = "pydata_sphinx_theme"
+html_title = "Sphinx-deployment-test"
 
 # Redirect the webpage to another URL
 # Sphinx will create the appropriate CNAME file in the build directory
@@ -100,10 +102,10 @@ html_title = 'Sphinx-deployment-test'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
 html_css_files = [
-    'css/custom.css',
+    "css/custom.css",
 ]
 
 html_favicon = "_static/logo_light.png"
@@ -121,12 +123,34 @@ html_theme_options = {
             # The type of image to be used (see below for details)
             "type": "fontawesome",
         }
-   ],
-   "logo": {
+    ],
+    "switcher": {
+        "json_url": "https://neuroinformatics.dev/sphinx-deployment-test/latest/_static/switcher.json",
+        "version_match": doc_version,
+    },
+    "logo": {
         "text": f"Sphinx-deployment-test v{release}",
         "image_light": "logo_light.png",
         "image_dark": "logo_dark.png",
     },
+    "navbar_end": ["version-switcher", "navbar-icon-links"],
     "footer_start": ["footer_start"],
     "footer_end": ["footer_end"],
 }
+
+# What to show on the 404 page
+notfound_context = {
+    "title": "Page Not Found",
+    "body": """
+<h1>Page Not Found</h1>
+
+<p>Sorry, we couldn't find that page.</p>
+
+<p>We occasionally restructure our website, and some links may have broken.</p> 
+
+<p>Try using the search box or go to the homepage.</p>
+""",
+}
+# Static files live in /<version>/_static/, but GH pages expects a single
+# 404.html at root, so use latest version for all static asset URLs in 404 page
+notfound_urls_prefix = "/latest/"
