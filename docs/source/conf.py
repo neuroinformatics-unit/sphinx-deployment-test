@@ -50,6 +50,7 @@ extensions = [
     "myst_parser",
     "numpydoc",
     "nbsphinx",
+    "notfound.extension",
 ]
 
 # Configure the myst parser to enable cool markdown features
@@ -137,6 +138,19 @@ html_theme_options = {
     "footer_end": ["footer_end"],
 }
 
+# What to show on the 404 page
+notfound_context = {
+    "title": "Page Not Found",
+    "body": """
+<h1>Page Not Found</h1>
+
+<p>Sorry, we couldn't find that page.</p>
+
+<p>We occasionally restructure our website, and some links may have broken.</p> 
+
+<p>Try using the search box or go to the homepage.</p>
+""",
+}
 # Static files live in /<version>/_static/, but GH pages expects a single
 # 404.html at root, so use latest version for all static asset URLs in 404 page
 notfound_urls_prefix = "/latest/"
