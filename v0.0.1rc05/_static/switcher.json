@@ -1,0 +1,12 @@
+[
+  {
+    "name": "dev",
+    "version": "dev",
+    "url": "https://neuroinformatics.dev/sphinx-deployment-test/dev/"
+  },
+  {
+    "name": "v0.0.1rc05 (latest)",
+    "version": "v0.0.1rc05",
+    "url": "https://neuroinformatics.dev/sphinx-deployment-test/latest/"
+  }
+]
