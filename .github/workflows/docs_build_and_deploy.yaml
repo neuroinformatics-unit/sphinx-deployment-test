@@ -32,7 +32,6 @@ jobs:
           python-version: 3.12
           use-make: true
           fetch-tags: true
-          use-artifactci: lazy
           check-links: false
 
   deploy_sphinx_docs:
